@@ -1,0 +1,78 @@
+.sidebar {
+  @apply absolute bg-app-background top-[96px] bottom-0 right-[-340px] max-w-[340px] w-full z-[4] invisible;
+  border-block-start: 1px solid hsla(250, 6%, 20%, 1);
+  overflow-y: overlay;
+  transition: 500ms ease;
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-transparent
+  }
+
+  &::-webkit-scrollbar-button {
+    @apply h-[16px]
+  }
+
+  &:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+    @apply bg-banner-background
+  }
+
+  &.active {
+    @apply -translate-x-[340px] visible;
+  }
+
+  .sideabr_inner {
+    @apply grid gap-[25px] py-[36px];
+
+    .sidebar_list,
+    .sidebar_footer {
+      @apply px-[36px]
+    }
+
+    .sidebar_list {
+      @apply grid gap-[8px];
+
+      .title {
+        @apply text-fs-title font-bold mb-[8px];
+        letter-spacing: 1.6px;
+      }
+
+      .sidebar_link {
+        @apply text-on-surface-variant;
+        transition: 250ms ease;
+
+        &:is(:hover, :focus-within) {
+          @apply text-on-background
+        }
+      }
+    }
+
+    .sidebar_footer {
+      @apply border-t-[1px] border-solid border-banner-background pt-[28px] mt-[16px];
+
+      .copyRight {
+        @apply text-on-surface-variant mb-[20px];
+
+        a {
+          @apply inline-block
+        }
+      }
+    }
+  }
+
+
+}
+
+
+.overlay {
+  @apply fixed top-[96px] left-0 bottom-0 bg-app-background opacity-0 w-full;
+  transition: 250ms ease;
+  z-index: 3;
+  pointer-events: none;
+
+  &.active {
+    @apply opacity-[0.5];
+    pointer-events: all;
+  }
+}
+
+

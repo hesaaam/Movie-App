@@ -1,0 +1,209 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './styles/header';
+@import './styles/searchbar';
+@import './styles/sidebar';
+@import './styles/home';
+@import './styles/detail';
+@import './styles/movieListPage';
+
+
+@layer base {
+  @font-face {
+    font-family: "Vazir";
+    src: url("../dist/fonts/Vazir.eot");
+    /* IE9 Compat Modes */
+    src: url("../dist/fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+      url("../dist/fonts/Vazir.woff2") format("woff2"),
+      url("../dist/fonts/Vazir.woff") format("woff"),
+      url("../dist/fonts/Vazir.ttf") format("truetype");
+    /* Safari, Android, iOS */
+  }
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  a,
+  img,
+  span,
+  iframe,
+  button {
+    display: block;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  img {
+    height: auto;
+  }
+
+  button {
+    text-align: right;
+  }
+
+  html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-vazir bg-app-background text-on-background text-fs-body leading-normal;
+
+  }
+
+  :focus-visible {
+    @apply outline-primary-variant
+  }
+
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-banner-background rounded-radius-8
+  }
+
+  input,
+  button {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit
+  }
+
+  input {
+    width: 100%;
+  }
+
+  input[type="text"]:-moz-placeholder {
+    text-align: right;
+  }
+
+  input[type="text"]:-ms-input-placeholder {
+    text-align: right;
+  }
+
+  input[type="text"]::-webkit-input-placeholder {
+    text-align: right;
+  }
+
+
+}
+
+@layer utilities {
+  .dir-l{
+    direction: ltr
+  }
+  .dir-r{
+    direction: rtl
+  }
+}
+
+@layer components {
+  .title_large {
+    @apply text-fs-title-lg font-bold tracking-[0.5px];
+  }
+
+  .meta_list {
+    @apply flex flex-wrap justify-start place-items-center gap-[12px];
+  }
+
+  .poster_box {
+    background-image: url('/dist/img/poster-bg-icon.png');
+    aspect-ratio: 2 / 3;
+  }
+  .poster_box,
+  .video_card {
+    @apply bg-no-repeat bg-[length:50px] bg-center bg-banner-background rounded-radius-16 overflow-hidden;
+  }
+
+  .video_card {
+    @apply bg-[url('/dist/img/video-bg-icon.png')] aspect-video flex-shrink-0 max-w-[500px] w-[calc(100%-40px)]
+  }
+
+
+  .title_wrapper {
+    @apply mb-[24px];
+  }
+
+  .slider_list {
+    @apply mx-[-20px] pb-[16px] mb-[-16px];
+    overflow-x: overlay;
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-transparent;
+    }
+
+    &:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+      @apply bg-banner-background;
+    }
+
+    &::-webkit-scrollbar-button {
+      @apply w-[20px];
+    }
+
+
+    .slider_inner {
+      @apply relative flex gap-[16px];
+
+      &::before,
+      &::after {
+        @apply content-[""] min-w-[4px];
+      }
+
+
+
+    }
+  }
+
+  .search-wrapper, .load_more {
+    @apply  relative flex-grow before:hidden before:content-[''] before:w-[20px] before:h-[20px] before:border-solid
+    before:border-[3px] before:border-white before:rounded-radius-24;
+    &:before {
+      border-inline-end-color: transparent;
+      animation: loading 500ms linear infinite;
+
+    }
+
+    &.searching::before {
+      @apply block
+    }
+  }
+
+  .search-wrapper {
+    @apply before:absolute before:top-[15px] before:left-[12px];
+  }
+
+  .load_more {
+    @apply bg-primary-variant mx-auto dir-l ;
+    margin-block: 36px 60px;
+
+    &:is(:hover, :focus-visible) {
+      @apply bg-[hsla(350,67%,39%,1)];
+    }
+
+    &.loading::before {
+      @apply block 
+    }
+  }
+
+
+  .art_container::after,
+  .search_modal::after {
+    content: "";
+    @apply fixed bottom-0 left-0 w-full h-[150px] z-[1] pointer-events-none;
+    background-image: linear-gradient(180deg, hsla(250, 13%, 11%, 0), hsla(250, 13%, 11%, 1))
+  }
+}

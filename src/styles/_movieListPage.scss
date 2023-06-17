@@ -1,0 +1,29 @@
+.genre_list {
+  .title_wrapper {
+    @apply mb-[56px];
+  }
+
+}
+
+:is(.genre_list, .search_modal) :is(.movie_card, .card_banner) {
+  width: 100% !important;
+}
+
+.grid_list {
+  @apply grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-x-[16px] gap-y-[20px];
+}
+
+
+.search_modal {
+  @apply fixed top-[96px] right-0 bottom-0 w-full bg-surface py-[50px] px-[24px] z-[4] hidden;
+  overflow-y: overlay;
+
+  &.active {
+    @apply block
+  }
+
+
+  .label {
+    @apply text-primary-variant font-bold mb-[8px]
+  }
+}

@@ -1,0 +1,164 @@
+.art_container {
+
+  @apply relative bg-surface text-on-surface h-[calc(100vh-96px)] z-[1];
+  padding: 24px 20px 48px;
+  overflow-y: overlay;
+
+
+  .banner {
+    @apply relative h-[700px] rounded-radius-24 overflow-hidden;
+
+    .banner_slider {
+
+
+      .slider_item {
+        @apply absolute top-0 right-[120%] w-full h-full bg-banner-background opacity-0 invisible;
+        transition: opacity 500ms ease;
+
+        &.active {
+          @apply right-0 opacity-[1] visible;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: linear-gradient(90deg, hsl(220, 17%, 7%) 0%, hsla(220, 17%, 7%, 0.5) 100%)
+        }
+
+
+        .banner_content {
+          @apply absolute right-[24px] left-[24px] bottom-[206px] z-[1] text-text-color;
+
+          & :is(.heading, .banner_text) {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+
+          .heading {
+            -webkit-line-clamp: 3;
+            margin-block-end: 16px;
+
+          }
+
+
+
+          .genre {
+            @apply my-[12px];
+          }
+
+          .banner_text {
+            -webkit-line-clamp: 2;
+            @apply mb-[24px];
+          }
+
+          .btn {
+            @apply bg-primary;
+
+            &:is(:hover, :focus-visible) {
+              @apply shadow-shadow-2;
+            }
+          }
+        }
+
+
+      }
+
+
+
+    }
+
+    .slider_control {
+      @apply absolute bottom-[20px] right-[20px] left-0 select-none py-[4px] pr-[4px] overflow-x-auto;
+      border-radius: 16px 16px 0 0;
+
+
+      &::-webkit-scrollbar {
+        @apply hidden;
+      }
+
+      .control_inner {
+        @apply flex gap-[12px];
+
+        &::after {
+          content: "";
+          @apply min-w-[12px];
+
+        }
+
+
+        .slider_item {
+          @apply w-[100px] rounded-radius-8 flex-shrink-0 brightness-[0.4];
+
+          &.active {
+            @apply brightness-[1] shadow-shadow-1;
+          }
+        }
+
+ 
+
+      }
+
+    }
+  }
+
+
+  .img_cover {
+    @apply w-full h-full object-cover;
+  }
+
+
+
+  .heading {
+    @apply text-white text-fs-heading font-bold tracking-[0.5px] leading-[1.2];
+  }
+
+
+  .meta_item {
+    @apply flex items-center gap-[4px];
+  }
+
+  .btn {
+    @apply text-white text-fs-button font-bold flex max-w-max items-center gap-[12px] py-[12px] pl-[24px] pr-[20px] rounded-radius-8;
+    transition: 250ms ease;
+
+    img {
+      @apply rotate-180;
+    }
+  }
+
+  .card_badge {
+    @apply bg-banner-background text-white text-fs-label font-bold px-[6px] rounded-radius-4 pt-[3px];
+  }
+
+
+
+  .movie_list {
+    @apply pt-[32px];
+
+    .movie_card {
+      @apply relative min-w-[200px];
+
+
+      .card_banner {
+        @apply w-[200px]
+      }
+
+      .title {
+        @apply w-full whitespace-nowrap text-ellipsis overflow-hidden;
+        margin-block: 8px 4px;
+      }
+
+      .meta_list {
+        @apply justify-between ;
+      }
+
+      .card_btn {
+        @apply absolute inset-0
+      }
+    }
+
+  }
+
+}

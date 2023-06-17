@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.header {
+  @apply relative flex justify-between items-start gap-2;
+  padding-block: 24px;
+  padding-inline: 16px;
+
+  .logo {
+    @apply flex items-center;
+    margin-inline-end: auto;
+
+    & img {
+      @apply -mt-[4px];
+      width: 45px;
+      height: 45px;
+    }
+
+    .app_name {
+      margin-bottom: -2px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      & span:nth-child(1) {
+        @apply text-red-500  text-4xl;
+        font-family: 'Pacifico', cursive !important;
+        // margin-right: -4px;
+
+      }
+
+      & span:nth-child(2) {
+        color: rgb(243, 221, 218);
+        margin-top: 2px;
+        font-size: 25px;
+        font-style: italic
+
+      }
+    }
+
+  }
+
+  .search_btn,
+  .menu_btn {
+    @apply p-[12px]
+  }
+
+  .search_btn {
+    @apply bg-banner-background rounded-radius-8;
+
+
+    & img {
+      opacity: 0.5;
+      transition: 250ms ease;
+    }
+
+    &:is(:hover, :focus-visible) img {
+      opacity: 1;
+    }
+  }
+
+
+
+  .menu_btn.active img:nth-child(1),
+  .menu_btn img:nth-child(2) {
+    @apply hidden
+  }
+
+  .menu_btn img:nth-child(1),
+  .menu_btn.active img:nth-child(2) {
+    @apply block
+  }
+}
