@@ -22,46 +22,18 @@ $(document).on('alpine:init', function () {
 
 
     fetchGenreMovieList() {
-      try {
-        fetch(`${baseURL}genre/movie/list?api_key=${api_key}`)
-          .then(res => res.json())
-          .then(res => this.genresList = res.genres)
-
-
-
-
-      } catch (error) {
-        console.log(error);
-      }
-
+      $.get(`${baseURL}genre/movie/list?api_key=${api_key}`, (data, status) =>{
+        if (status === 'success') {
+          this.genresList = data.genres
+          
+        }
+      });
 
     },
 
     init() {
       this.fetchGenreMovieList()
 
-
-      const settings = {
-        async: true,
-        crossDomain: true,
-        url: 'https://ai-translation-apis.p.rapidapi.com/',
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          'X-RapidAPI-Key': 'ae1f51e48dmsh48ee401f07a348fp175bccjsn83f580fc403d',
-          'X-RapidAPI-Host': 'ai-translation-apis.p.rapidapi.com'
-        },
-        processData: false,
-        data: JSON.stringify({
-          "fromLan": "en",
-          "toLan": "fa",
-          "text": "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything—and everyone—that Dom loves, forever."
-        })
-      };
-      
-      $.ajax(settings).done(function (response) {
-        alert(response.data.translated);
-      });
     }
   })
   // ---------------------------------------------------
