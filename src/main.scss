@@ -117,7 +117,8 @@
   }
 
   .meta_list {
-    @apply flex flex-wrap justify-start place-items-center gap-[12px];
+    @apply flex flex-wrap  gap-[12px];
+    align-items: self-start;
   }
 
   .poster_box {

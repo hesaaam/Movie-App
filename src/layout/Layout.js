@@ -3,7 +3,8 @@ import Sidebar from "../components/sidebar";
 import Home from "../pages/home";
 import Detail from "../pages/detail";
 import movieListPage from "../pages/movieListPage";
-
+import '../store/store'
+import '../store/api/api.js'
 
 
 

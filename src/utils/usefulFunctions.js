@@ -36,7 +36,7 @@ export const fetchData = (url, options) => {
 //   * 
 //   * hero slider functionality
 //   */
-export const addHeroSlideTo = () => {
+export const addHeroSlideTo = async () => {
 
   const sliderItems = document.querySelectorAll('.slider_item')
   const sliderControls = document.querySelectorAll('[slider-control]')

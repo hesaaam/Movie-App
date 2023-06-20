@@ -1,11 +1,9 @@
 import search from "./searchBar";
-import '../store/store'
-import '../store/api/api.js'
 const Header = () => {
   return (
     /* html */`
       <header x-data="header" class="header">
-        <a href="/" x-on:click.prevent="changeRoute('/'); $store.Popular.fetchPopularMovieList()" class="logo">
+        <a href="/" x-on:click.prevent="changeRoute('/')" class="logo">
           <div class="app_name">
             <span >H</span>
             <span>movie</span>

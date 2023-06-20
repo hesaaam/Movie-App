@@ -1,6 +1,3 @@
-import '../store/api/api.js';
-
-
 
 
 
@@ -9,13 +6,13 @@ const Sidebar = () => {
   return (
     /* html */`
 
-        <nav  class="sidebar" :class="toggleAciveClassSidebar && 'active'">
+        <nav x-data="genres" class="sidebar" :class="toggleAciveClassSidebar && 'active'">
           <div class="sideabr_inner">
-            <div x-data class="sidebar_list" genreList>
+            <div  class="sidebar_list" genreList>
               <p class="title">ژانر</p>
-              <template x-if="$store.genres.genresList">
-                <template x-for="genre in $store.genres.genresList" :key="genre.id">
-                  <a  x-text="$store.genres.wordToPersian(genre.name)" href="/movie-list" @click.prevent="changeRoute('/movie-list'); toggleAciveClassSidebar = false" class="sidebar_link" ></a>
+              <template x-if="genresList">
+                <template x-for="genre in genresList" :key="genre.id">
+                  <a  x-text="wordToPersian(genre.name)" href="/movie-list" @click.prevent="changeRoute('/movie-list'); toggleAciveClassSidebar = false" class="sidebar_link" ></a>
 
                 </template>
               
