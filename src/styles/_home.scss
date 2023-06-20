@@ -51,6 +51,10 @@
           .banner_text {
             -webkit-line-clamp: 2;
             @apply mb-[24px];
+            transition:  500ms ease;
+            &.active {
+              filter: blur(4px)
+            }
           }
 
           .btn {
