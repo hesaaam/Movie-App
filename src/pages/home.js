@@ -1,4 +1,4 @@
-import movieList from "../components/movieList"
+
 
 
 
@@ -6,7 +6,7 @@ const Home = () => {
   return (
 
     /* html */`
-        <article  class="art_container">
+        <article x-data="homePage"  class="art_container" page_content>
           <!--
             - #BANNER
           -->
@@ -24,10 +24,10 @@ const Home = () => {
 
           <!--
             -movie list
+        
           -->
-          <!--
-          ${movieList()}
-          -->
+          
+          
         </article>
     
     `

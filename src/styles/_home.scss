@@ -152,6 +152,7 @@
       .title {
         @apply w-full whitespace-nowrap text-ellipsis overflow-hidden;
         margin-block: 8px 4px;
+        direction: ltr
       }
 
       .meta_list {

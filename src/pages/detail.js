@@ -1,4 +1,4 @@
-import movieList from "../components/movieList"
+
 
 const Detail = () => {
   return (
@@ -82,11 +82,7 @@ const Detail = () => {
           </div>
 
 
-          <!--
-            -movie list
-          -->
 
-          ${movieList()}
         </article>
     
     

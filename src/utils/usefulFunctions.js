@@ -36,7 +36,7 @@ export const fetchData = (url, options) => {
 //   * 
 //   * hero slider functionality
 //   */
-export const addHeroSlideTo = async () => {
+export const addHeroSlideTo =  () => {
 
   const sliderItems = document.querySelectorAll('.slider_item')
   const sliderControls = document.querySelectorAll('[slider-control]')
@@ -84,7 +84,7 @@ export const addHeroSlideTo = async () => {
   //     console.error('Error:', error);
   //   });
   // ---------------------------------------
-  const sliderStart = async function () {
+  const sliderStart =  function () {
     lastSliderItem.classList.remove('active')
     lastSliderControl.classList.remove('active')
 
