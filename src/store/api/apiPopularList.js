@@ -105,8 +105,10 @@ $(document).on('alpine:init', function () {
           
                               <p class="genre">${genreList.asString(genre_ids)}</p>
                               <P class="banner_text" data-lang="${language}" >${overview}</P>
-          
-                              <a href="/detail" x-on:click.prevent="changeRoute('/detail')" class="btn">
+                              
+                              <a href="/detail" x-on:click.prevent="changeRoute('/detail');
+                               $nextTick(() => {getMovieDetails(${id})})" 
+                               class="btn">
                                 <span>حالا تماشا کن</span>
                                 <img src="/dist/img/play_circle.png" width="24" height="24" aria-hidden="true" alt="play circle" />
           
@@ -115,7 +117,7 @@ $(document).on('alpine:init', function () {
                           </div>
                         
                         `
-      
+                      // line 110 getMovieDetails() called from store/store.js
                     this.poster_box += `
                           <button class="poster_box slider_item " slider-control="${index}">
                             <img src="${this.imageBaseURL}w154${poster_path}"
