@@ -48,7 +48,7 @@ $(document).on('alpine:init', function () {
   
         fetchData(`${baseURL}genre/movie/list?api_key=${api_key}`)
   
-          .then((res => {
+          .then((res) => {
             /**
               * fetch all genres eg : [{"id": "45" , "name": "Action"}]
               * then change genre format eg: {123: "Action"} 
@@ -107,7 +107,7 @@ $(document).on('alpine:init', function () {
                               <P class="banner_text" data-lang="${language}" >${overview}</P>
                               
                               <a href="/detail" x-on:click.prevent="changeRoute('/detail');
-                               $nextTick(() => {getMovieDetails(${id})})" 
+                               getMovieDetails(${id})" 
                                class="btn">
                                 <span>حالا تماشا کن</span>
                                 <img src="/dist/img/play_circle.png" width="24" height="24" aria-hidden="true" alt="play circle" />
@@ -136,7 +136,7 @@ $(document).on('alpine:init', function () {
       
 
               })
-          }))
+          })
           
           this.$watch('PopularMovieList', value => value && addHeroSlideTo())
       },

@@ -1,8 +1,6 @@
 import $ from 'jquery';
-// import { fetchData } from '../../utils/usefulFunctions';
 import { api_key } from './api';
 import { baseURL } from './api';
-import { imageBaseURL } from './api';
 import { fetchDataFromTmdb } from './api';
 import movieList from '../../components/movieList';
 
@@ -17,7 +15,6 @@ $(document).on('alpine:init', function () {
 
   Alpine.data('homePage', function () {
     return {
-      imageBaseURL,
       homePageSections: [
         {
           title: "بزودی",

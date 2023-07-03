@@ -31,7 +31,7 @@ export const createMovieCard = (movie) => {
         <div class="card_badge">${release_date.split('-')[0]}</div>
       </div>
       
-      <a href="/detail" x-on:click.prevent="changeRoute('/detail'); $nextTick(() => {getMovieDetails(${id} )})" 
+      <a href="/detail" x-on:click.prevent="changeRoute('/detail'); getMovieDetails(${id})" 
        class="card_btn" title="${title}"> <!-- getMovieDetails() called from store/store.js -->
       </a>
   

@@ -3,7 +3,7 @@ const Header = () => {
   return (
     /* html */`
       <header x-data="header" class="header">
-        <a href="/" x-on:click.prevent="changeRoute('/')" class="logo">
+        <a href="/"  class="logo">
           <div class="app_name">
             <span >H</span>
             <span>movie</span>
