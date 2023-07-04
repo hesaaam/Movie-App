@@ -20,15 +20,15 @@ const Layout = () => {
         ${Header()}
         ${Sidebar()}
 
-        <template x-if="route === '/'" >
+        <template x-if="route === 'http://127.0.0.1:5173/home' || route === 'http://127.0.0.1:5173/'" >
           ${Home()}
         
         </template>
 
-        <template x-if="route === '/detail'" >
+        <template x-if="route === 'http://127.0.0.1:5173/detail'" >
           ${Detail()}
         </template>
-        <template x-if="route === '/movie-list'" >
+        <template x-if="route === 'http://127.0.0.1:5173/movie-list'" >
           ${movieListPage()}
         </template>
       

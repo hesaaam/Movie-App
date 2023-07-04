@@ -106,7 +106,7 @@ $(document).on('alpine:init', function () {
                               <p class="genre">${genreList.asString(genre_ids)}</p>
                               <P class="banner_text" data-lang="${language}" >${overview}</P>
                               
-                              <a href="/detail" x-on:click.prevent="changeRoute('/detail');
+                              <a href="/detail" @click.prevent="changeRoute('/detail');
                                getMovieDetails(${id})" 
                                class="btn">
                                 <span>حالا تماشا کن</span>
