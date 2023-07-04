@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import { imageBaseURL, api_key, baseURL, fetchDataFromTmdb } from './api'
 import { wordToPersian } from '../../utils/translate.js'
+import { movieList as addsuggestion } from '../../components/movieList'
 
 
 
@@ -45,15 +46,17 @@ $(document).on('alpine:init', function () {
     },
 
     getAgeCategory (certification) {
-      const AgeCategory = certification.find(obj => obj.iso_3166_1 === 'US');
-      return AgeCategory ? AgeCategory.certification : null;
+      const AgeCategory = certification.filter( (obj) =>  obj.iso_3166_1 === 'US' && obj.certification ||
+        obj.iso_3166_1 === 'NL' && obj.certification);
+        return AgeCategory[0].certification
+       
     },
 
     init() {
       const movieId = window.localStorage.getItem('movieId')
       const pageDetail = document.querySelector('[page_detail]');
       fetchDataFromTmdb(`${baseURL}movie/${movieId}?api_key=${api_key}&append_to_response=casts%2Cvideos%2Cimages%2Creleases`,
-         (movie) =>{
+        (movie) =>{
           const {
             backdrop_path,
             poster_path,
@@ -164,6 +167,8 @@ $(document).on('alpine:init', function () {
           }
 
           pageDetail.appendChild(movieDetail)
+
+          fetchDataFromTmdb(`${baseURL}movie/${movieId}/recommendations?api_key=${api_key}`,addsuggestion)
         }
       )
     }

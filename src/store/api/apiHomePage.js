@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { api_key } from './api';
 import { baseURL } from './api';
 import { fetchDataFromTmdb } from './api';
-import movieList from '../../components/movieList';
+import {movieList} from '../../components/movieList';
 
 /**
  * Home page section `Top rated, Upcoming, Trending movies`

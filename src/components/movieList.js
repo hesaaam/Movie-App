@@ -1,14 +1,18 @@
 import { createMovieCard } from "./movieCard" 
 
-const movieList = function ({results : movieResults}, title) {
+export const movieList = function ({results : movieResults}, title) {
+  
+  const path = window.location.pathname 
   const pageContent = document.querySelector('[page_content]')
+  const pageDetail = document.querySelector('[page_detail]');
   const movieListElem = document.createElement('section')
+
   movieListElem.classList.add('movie_list')
-  movieListElem.ariaLabel = title
+  movieListElem.ariaLabel =  path === '/detail'? 'ممکن است دوست داشته باشید' : title 
 
   movieListElem.innerHTML = `
         <div class="title_wrapper">
-          <h3 class="title_large">${title} </h3>
+          <h3 class="title_large">${path === '/detail'? 'ممکن است دوست داشته باشید' : title} </h3>
         </div>
         <div class="slider_list">
 
@@ -27,8 +31,20 @@ const movieList = function ({results : movieResults}, title) {
     movieListElem.querySelector('.slider_inner').appendChild(movieCrad);
 
   }
-  pageContent.appendChild(movieListElem);
+
+  
+  switch (path) {
+    case '/home':
+      return pageContent.appendChild(movieListElem)
+    case '/':
+      return pageContent.appendChild(movieListElem)
+    case '/detail':
+      return pageDetail.appendChild(movieListElem);
+    default:
+      break;
+  }
+  
 }
 
 
-export default movieList
+ 
