@@ -6,7 +6,7 @@ const Home = () => {
   return (
 
     /* html */`
-        <article x-data="homePage"  class="art_container" page_content>
+        <article x-data="homePage"  class="art_container" x-ref="page_content">
           <!--
             - #BANNER
           -->

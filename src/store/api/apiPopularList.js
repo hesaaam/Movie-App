@@ -1,10 +1,7 @@
 import $ from 'jquery';
 import { wordToPersian } from '../../utils/translate';
-import { addHeroSlideTo } from '../../utils/usefulFunctions';
-import { fetchData } from '../../utils/usefulFunctions';
-import { api_key } from './api';
-import { baseURL } from './api';
-import { imageBaseURL } from './api';
+import { addHeroSlideTo , fetchData } from '../../utils/usefulFunctions';
+import { api_key, imageBaseURL, baseURL } from './api';
 
 
 $(document).on('alpine:init', function () {

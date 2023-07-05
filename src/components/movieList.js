@@ -3,8 +3,8 @@ import { createMovieCard } from "./movieCard"
 export const movieList = function ({results : movieResults}, title) {
   
   const path = window.location.pathname 
-  const pageContent = document.querySelector('[page_content]')
-  const pageDetail = document.querySelector('[page_detail]');
+  const pageContent = document.querySelector('[x-ref=page_content]')
+  const pageDetail = document.querySelector('[x-ref=page_detail]');
   const movieListElem = document.createElement('section')
 
   movieListElem.classList.add('movie_list')

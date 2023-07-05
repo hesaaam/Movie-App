@@ -1,7 +1,5 @@
 import $ from 'jquery';
-import { api_key } from './api';
-import { baseURL } from './api';
-import { fetchDataFromTmdb } from './api';
+import { api_key, fetchDataFromTmdb, baseURL } from './api';
 import {movieList} from '../../components/movieList';
 
 /**

@@ -46,15 +46,13 @@ $(document).on('alpine:init', function () {
     },
 
     getAgeCategory (certification) {
-      const AgeCategory = certification.filter( (obj) =>  obj.iso_3166_1 === 'US' && obj.certification ||
-        obj.iso_3166_1 === 'NL' && obj.certification);
-        return AgeCategory[0].certification
+      const AgeCategory = certification.find( obj =>  obj.iso_3166_1 === 'US')
+      return AgeCategory ? AgeCategory['certification'] || 'PG' : 'PG';
        
     },
 
     init() {
       const movieId = window.localStorage.getItem('movieId')
-      const pageDetail = document.querySelector('[page_detail]');
       fetchDataFromTmdb(`${baseURL}movie/${movieId}?api_key=${api_key}&append_to_response=casts%2Cvideos%2Cimages%2Creleases`,
         (movie) =>{
           const {
@@ -166,7 +164,7 @@ $(document).on('alpine:init', function () {
             movieDetail.querySelector('.slider_inner').appendChild(videoCard);
           }
 
-          pageDetail.appendChild(movieDetail)
+          this.$refs.page_detail.appendChild(movieDetail)
 
           fetchDataFromTmdb(`${baseURL}movie/${movieId}/recommendations?api_key=${api_key}`,addsuggestion)
         }

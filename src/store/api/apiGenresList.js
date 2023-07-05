@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import { wordToPersian } from '../../utils/translate';
-import { api_key } from './api';
-import { baseURL } from './api';
+import { api_key, baseURL } from './api';
 
 
 
