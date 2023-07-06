@@ -2,25 +2,13 @@ import $ from 'jquery'
 
 
 
-
-
-
-
-
-$(document).on('alpine:init', function () {
-  Alpine.data('header', () => ({
-    toggleAciveClass: false,
-
-  }))
-})
-
-
 $(document).on('alpine:init', function () {
 
 
   Alpine.data('layout', function () {
     return {
       toggleAciveClassSidebar: false,
+      toggleAciveClass: false, // use in header.js
 
       /**
        * store movieId in `localStorage`,
@@ -31,6 +19,12 @@ $(document).on('alpine:init', function () {
         // location.reload();
 
       },
+
+      getMovieList (urlparam, genreName) {
+        window.localStorage.setItem('urlParam', urlparam);
+        window.localStorage.setItem('genreName', genreName);
+      },
+
     }
 
   })

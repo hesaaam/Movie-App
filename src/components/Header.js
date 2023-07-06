@@ -2,7 +2,7 @@ import search from "./searchBar";
 const Header = () => {
   return (
     /* html */`
-      <header x-data="header" class="header">
+      <header  class="header">
         <a href="/home" @click.prevent="changeRoute('/home')" class="logo">
           <div class="app_name">
             <span >H</span>

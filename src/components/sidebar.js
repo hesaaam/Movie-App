@@ -12,7 +12,12 @@ const Sidebar = () => {
               <p class="title">ژانر</p>
               <template x-if="genresList">
                 <template x-for="genre in genresList" :key="genre.id">
-                  <a  x-text="wordToPersian(genre.name)" href="/movie-list" @click.prevent="changeRoute('/movie-list'); toggleAciveClassSidebar = false" class="sidebar_link" ></a>
+                  <a  x-text="wordToPersian(genre.name)" href=""
+                    @click.prevent="changeRoute('/movie-list');
+                    getMovieList('with_genres='+genre.id, genre.name);
+                    toggleAciveClassSidebar = false"
+                    class="sidebar_link" >
+                  </a>
 
                 </template>
               
@@ -22,9 +27,22 @@ const Sidebar = () => {
             </div>
             <div class="sidebar_list">
               <p class="title">زبان</p>
-              <a href="#" class="sidebar_link">انگلیسی</a>
-              <a href="#" class="sidebar_link">هندی</a>
-              <a href="#" class="sidebar_link">ایرانی</a>
+
+              <a href="/movie-list" class="sidebar_link"
+                @click.prevent="changeRoute('/movie-list');
+                getMovieList('with_original_language=fa','Persian')">
+                ایرانی
+              </a>
+              <a href="/movie-list" class="sidebar_link"
+               @click.prevent="changeRoute('/movie-list');
+               getMovieList('with_original_language=tr','Turkish')">
+               ترکی
+              </a>
+              <a href="/movie-list" class="sidebar_link"
+                @click.prevent="changeRoute('/movie-list');
+                getMovieList('with_original_language=hi','Hindi')">
+                هندی
+              </a>
 
             </div>
 

@@ -38,6 +38,12 @@ export const wordToPersian = (word) => {
       return 'جنگی'
     case 'Western':
       return 'وسترن'
+    case 'Persian':
+      return 'ایرانی'
+    case 'Hindi':
+      return 'هندی'
+    case 'Turkish':
+      return 'ترکی'
 
     default:
       return '*'
