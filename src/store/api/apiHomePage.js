@@ -25,6 +25,10 @@ $(document).on('alpine:init', function () {
         {
           title: "فیلم های دارای رتبه برتر",
           path: "movie/top_rated"
+        },
+        {
+          title: "در حال پخش",
+          path: "movie/now_playing"
         }
       ],
 

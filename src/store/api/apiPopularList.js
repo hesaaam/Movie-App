@@ -85,7 +85,7 @@ $(document).on('alpine:init', function () {
                     } = item;
                     this.slider_item += `
                           <div  class="slider_item ">
-                            <img src="${this.imageBaseURL}w1280${backdrop_path}"
+                            <img src="${this.imageBaseURL}original${backdrop_path}"
                               alt="${title}" class="img_cover" loading=${index === 0 ? "eager" : "lazy"}
                             />
           

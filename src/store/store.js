@@ -1,4 +1,7 @@
 import $ from 'jquery'
+import { fetchData } from '../utils/usefulFunctions';
+import { api_key, baseURL,imageBaseURL, fetchDataFromTmdb } from './api/api';
+import { createMovieCard } from '../components/movieCard';
 
 
 
@@ -9,6 +12,9 @@ $(document).on('alpine:init', function () {
     return {
       toggleAciveClassSidebar: false,
       toggleAciveClass: false, // use in header.js
+      searchField: '',
+      searchResulMovie : [],
+      imageBaseURL,
 
       /**
        * store movieId in `localStorage`,
@@ -24,6 +30,47 @@ $(document).on('alpine:init', function () {
         window.localStorage.setItem('urlParam', urlparam);
         window.localStorage.setItem('genreName', genreName);
       },
+
+
+      init() {
+        this.$watch('searchField', query => {
+          if (!query.trim()) {
+            this.$refs.searchResult.classList.remove('active');
+            this.$refs.search_wrapper.classList.remove('searching');
+            return;
+          }
+  
+          this.$refs.search_wrapper.classList.add('searching');
+  
+          fetchDataFromTmdb(`${baseURL}search/movie?api_key=${api_key}&query=${query}&include_adult=false&page=1`,
+            ({results: movieList}) => {
+            
+            this.$refs.search_wrapper.classList.remove('searching');
+            this.$refs.searchResult.classList.add('active');
+            this.$refs.searchResult.innerHTML = ''; // remove old results
+            
+
+            this.$refs.searchResult.innerHTML = `
+                <p class="label">نتیحه برای</p>
+
+                <h1 class="heading" x-text="searchField"></h1>
+
+                <div class="movie_list">
+
+                  <div class="grid_list"></div>
+                </div>
+
+            `;
+
+            for (const movie of movieList) {
+              const movieCrad = createMovieCard(movie)
+
+              this.$refs.searchResult.querySelector('.grid_list').appendChild(movieCrad);
+            }
+
+          })
+        })
+      }
 
     }
 

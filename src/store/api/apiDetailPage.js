@@ -77,8 +77,7 @@ $(document).on('alpine:init', function () {
 
           movieDetail.innerHTML = `
               <div class="backdrop_image"
-               style="background-image: url('${imageBaseURL}${"w1280" || "original"}
-               ${backdrop_path || poster_path}')">
+               style="background-image: url('${imageBaseURL}${"w1280" || "original"}${backdrop_path || poster_path}')">
               </div>
               
       

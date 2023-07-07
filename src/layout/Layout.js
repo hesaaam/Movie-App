@@ -5,6 +5,7 @@ import Detail from "../pages/detail";
 import movieListPage from "../pages/movieListPage";
 import '../store/store'
 import '../store/api/api.js'
+import searchModal from "../components/searchModal";
 
 
 
@@ -15,22 +16,27 @@ const Layout = () => {
     /* html */`
     <div x-data="route">
 
-      <div x-data="layout">
+      <div x-data="layout" >
       
         ${Header()}
-        ${Sidebar()}
 
-        <template x-if="path === '/home' || path === '/'" >
-          ${Home()}
+        <main x-ref="main">
         
-        </template>
+          ${Sidebar()}
 
-        <template x-if="path === '/detail'" >
-          ${Detail()}
-        </template>
-        <template x-if="path === '/movie-list'" >
-          ${movieListPage()}
-        </template>
+          <template x-if="path === '/home' || path === '/'" >
+            ${Home()}
+          
+          </template>
+
+          <template x-if="path === '/detail'" >
+            ${Detail()}
+          </template>
+          <template x-if="path === '/movie-list'" >
+            ${movieListPage()}
+          </template>
+          ${searchModal()}
+        </main>
       
       </div>
     
