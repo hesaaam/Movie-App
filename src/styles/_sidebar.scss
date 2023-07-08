@@ -1,6 +1,6 @@
 .sidebar {
-  @apply absolute bg-app-background top-[96px] bottom-0 right-[-340px] max-w-[340px] w-full z-[4] invisible;
-  border-block-start: 1px solid hsla(250, 6%, 20%, 1);
+  @apply absolute bg-app-background top-[96px] border-t-[1px] border-[hsla(250,6%,20%,1)] border-solid bottom-0 right-[-340px]
+  max-w-[340px] w-full z-[4] invisible min-[1200px]:static min-[1200px]:visible min-[1200px]:border-t-0 min-[1200px]:h-[calc(100vh-96px)];
   overflow-y: overlay;
   transition: 500ms ease;
 
@@ -17,7 +17,7 @@
   }
 
   &.active {
-    @apply -translate-x-[340px] visible;
+    @apply -translate-x-[340px] visible min-[1200px]:transform-none;
   }
 
   .sideabr_inner {
@@ -29,7 +29,7 @@
     }
 
     .sidebar_list {
-      @apply grid gap-[8px];
+      @apply grid gap-[8px] min-[1200px]:px-[56px];
 
       .title {
         @apply text-fs-title font-bold mb-[8px];
@@ -47,7 +47,7 @@
     }
 
     .sidebar_footer {
-      @apply border-t-[1px] border-solid border-banner-background pt-[28px] mt-[16px];
+      @apply border-t-[1px] border-solid border-banner-background pt-[28px] mt-[16px] min-[1200px]:px-[56px];
 
       .copyRight {
         @apply text-on-surface-variant mb-[20px];
@@ -64,7 +64,7 @@
 
 
 .overlay {
-  @apply fixed top-[96px] left-0 bottom-0 bg-app-background opacity-0 w-full;
+  @apply fixed top-[96px] left-0 bottom-0 bg-app-background opacity-0 w-full min-[1200px]:hidden;
   transition: 250ms ease;
   z-index: 3;
   pointer-events: none;

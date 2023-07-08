@@ -1,9 +1,7 @@
 .search-box {
-  @apply absolute top-0 right-0 w-full h-full bg-app-background py-[24px] px-[16px]  items-center gap-[8px] z-10 hidden;
+  @apply absolute flex top-0 right-0 w-full h-full bg-app-background py-[24px] px-[16px] 
+  items-center gap-[8px] z-10 min-[768px]:w-[500px] min-[768px]:right-[29%] min-[1200px]:left-0 min-[1200px]:right-[unset];
   
-  &.active {
-    @apply flex  
-  }
 
   .search-wrapper {
 
@@ -49,4 +47,10 @@
 @keyframes loading {
   0% {transform: rotate(0);}
   100% {transform: rotate(1turn)}
+}
+
+@media (min-width: 768px) {
+  .search-box {
+    display: block !important;
+  }
 }

@@ -1,5 +1,5 @@
 .backdrop_image {
-  @apply absolute top-0 right-0 w-full h-[600px] bg-no-repeat bg-cover bg-center z-[-1];
+  @apply absolute top-0 right-0 w-full h-[600px] bg-no-repeat bg-cover bg-center z-[-1] min-[1200px]:rounded-tr-radius-36;
 
   &::after {
     @apply content-[""] absolute inset-0;
@@ -20,9 +20,26 @@ img[alt="rating"] {
 }
 
 .movie_detail {
+  @apply min-[768px]:flex min-[768px]:items-start min-[768px]:gap-[40px];
 
+  .detail_box {
+    @apply min-[768px]:grow;
+  }
+
+  .detail_content {
+    @apply min-[575px]:max-w-[750px]
+  }
   .movie_poster {
-    @apply max-w-[300px] w-full;
+    @apply max-w-[300px] w-full min-[768px]:shrink-0 min-[768px]:sticky min-[768px]:top-0;
+  }
+
+  .slider_list {
+    @apply min-[768px]:mr-0  min-[768px]:rounded-tr-radius-16  min-[768px]:rounded-tl-radius-16;
+
+  }
+
+  .slider_inner::before {
+    @apply min-[768px]:hidden;
   }
 
   .heading {

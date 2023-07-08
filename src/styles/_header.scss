@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .header {
-  @apply relative flex justify-between items-start gap-2;
-  padding-block: 24px;
-  padding-inline: 16px;
+  @apply relative flex justify-between items-start gap-2 py-[24px] px-[16px] min-[1200px]:py-[27px] min-[1200px]:px-[56px];
+
 
   .logo {
     @apply flex items-center;
     margin-inline-end: auto;
 
-    & img {
-      @apply -mt-[4px];
-      width: 45px;
-      height: 45px;
+     img {
+      @apply -mt-[4px] w-[45px] h-[45px];
+
     }
 
     .app_name {
@@ -44,8 +42,12 @@
     @apply p-[12px]
   }
 
+  .menu_btn {
+    @apply min-[1200px]:hidden;
+  }
+
   .search_btn {
-    @apply bg-banner-background rounded-radius-8;
+    @apply bg-banner-background rounded-radius-8 min-[768px]:hidden;
 
 
     & img {

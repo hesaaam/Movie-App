@@ -60,12 +60,12 @@ $(document).on('alpine:init', function () {
             fetchData(`${baseURL}movie/popular?api_key=${api_key}&language=en-US&page=1`)
       
               .then((res) => {
-                for (let movie of res.results) {
-                  movie.language = 'en';
-                  this.PopularMovieList.push(movie)
+                
+                  
+                this.PopularMovieList = res.results
       
       
-                }
+                
                
       
                 if (this.PopularMovieList.length) {
