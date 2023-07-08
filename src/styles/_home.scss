@@ -31,8 +31,8 @@ main {
 
           .banner_content {
             @apply absolute right-[24px] left-[24px] bottom-[206px] z-[1] text-text-color
-             min-[575px]:left-auto min-[575px]:max-w-[500px] min-[768px]:bottom-[50%]
-            min-[768px]:translate-y-[50%] min-[768px]:right-[50px] min-[1200px]:right-[100px];
+             min-[575px]:left-auto min-[575px]:max-w-[500px] min-[768px]:bottom-[56%]
+            min-[768px]:translate-y-[50%] min-[768px]:right-[50px] min-[1200px]:right-[100px] min-[1302px]:bottom-[50%];
 
             & :is(.heading, .banner_text) {
               display: -webkit-box;
@@ -76,7 +76,7 @@ main {
 
       .slider_control {
         @apply absolute bottom-[20px] right-[20px] left-0
-         select-none py-[4px] pr-[4px] overflow-x-auto min-[575px]:right-[calc(87%-400px)];
+         select-none py-[4px] pr-[4px] overflow-x-auto min-[575px]:right-[calc(100%-400px)] min-[1505px]:right-[calc(84%-400px)];
         border-radius: 16px 16px 0 0;
 
 
@@ -150,24 +150,11 @@ main {
   }
 
 
-
-  .heading {
-    @apply text-white text-fs-heading font-bold tracking-[0.5px] leading-[1.2];
-  }
-
-
   .meta_item {
     @apply flex items-center gap-[4px];
   }
 
-  .btn {
-    @apply text-white text-fs-button font-bold flex max-w-max items-center gap-[12px] py-[12px] pl-[24px] pr-[20px] rounded-radius-8;
-    transition: 250ms ease;
 
-    img {
-      @apply rotate-180;
-    }
-  }
 
   .card_badge {
     @apply bg-banner-background text-white text-fs-label font-bold px-[6px] rounded-radius-4 pt-[3px];
