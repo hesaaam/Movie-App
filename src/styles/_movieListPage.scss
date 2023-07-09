@@ -15,7 +15,7 @@
 
 
 .search_modal {
-  @apply fixed top-[96px] right-0 bottom-0 w-full bg-surface py-[50px] px-[24px] z-[4] hidden  min-[1200px]:p-[60px];
+  @apply fixed top-[95px] right-0 bottom-0 w-full bg-surface py-[50px] px-[24px] z-[4] hidden  min-[1200px]:p-[60px];
   overflow-y: overlay;
 
   &.active {
