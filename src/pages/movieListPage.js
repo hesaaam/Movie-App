@@ -15,7 +15,7 @@ const movieListPage = () => {
 
           <section class="movie_list genre_list" :ariaLabel="genreName+' '+'movie'" >
             <div class="title_wrapper">
-              <h1 class="heading" x-text="'همه فیلم های '+''+wordToPersian(genreName)"></h1>
+              <h1 class="heading" x-text="' فیلم های '+''+wordToPersian(genreName)"></h1>
             </div>
             <div class="grid_list" x-ref="gridList">
               <template x-if="movieList" >

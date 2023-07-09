@@ -13,7 +13,7 @@ export const wordToPersian = (word) => {
     case 'Documentary':
       return 'مستند'
     case 'Drama':
-      return 'دارم'
+      return 'درام'
     case 'Family':
       return 'خانوادگی'
     case 'Fantasy':

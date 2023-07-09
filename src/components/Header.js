@@ -6,7 +6,7 @@ const Header = () => {
         <a href="/home" @click.prevent="changeRoute('/home')" class="logo">
           <div class="app_name">
             <span >H</span>
-            <span>movie</span>
+            <span>film</span>
           </div>
           <img src="/favicon.svg" alt="Hmovie home" />
         </a>
