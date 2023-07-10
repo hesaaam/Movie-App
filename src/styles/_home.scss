@@ -119,6 +119,9 @@ main {
 
   .img_cover {
     @apply w-full h-full object-cover;
+    transition: all 0.5s ease-in-out;
+
+    
   }
 
 
@@ -127,10 +130,6 @@ main {
     @apply text-white text-fs-heading font-bold tracking-[0.5px] leading-[1.2];
   }
 
-
-  .meta_item {
-    @apply flex items-center gap-[4px];
-  }
 
   .btn {
     @apply text-white text-fs-button font-bold flex max-w-max items-center gap-[12px] py-[12px] pl-[24px] pr-[20px] rounded-radius-8;
@@ -141,13 +140,8 @@ main {
     }
   }
 
-  .card_badge {
-    @apply bg-banner-background text-white text-fs-label font-bold px-[6px] rounded-radius-4 pt-[3px];
-  }
 
-  .img_cover {
-    @apply w-full h-full object-cover;
-  }
+
 
 
   .meta_item {
@@ -158,31 +152,90 @@ main {
 
   .card_badge {
     @apply bg-banner-background text-white text-fs-label font-bold px-[6px] rounded-radius-4 pt-[3px];
+    transition: all 0.5s ease-in-out;
   }
 
   .movie_list {
     @apply pt-[32px];
 
     .movie_card {
-      @apply relative min-w-[200px];
+      @apply  min-w-[200px] cursor-pointer;
+      transition: all 0.5s ease-in-out;
+
+      .card_head {
+        @apply relative overflow-hidden;
+      }
+
+
+      .play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        transition: all 0.5s ease-in-out;
+        
+        img {
+          height: 90px;
+          width: 90px;
+          @apply animate-ping ;
+          
+        }
+      }
 
 
       .card_banner {
-        @apply w-[200px]
+        @apply w-[200px];
       }
 
       .title {
         @apply w-full whitespace-nowrap text-ellipsis overflow-hidden dir-l;
         margin-block: 8px 4px;
+        transition: all 0.3s ease-in-out;
+
         
       }
 
       .meta_list {
-        @apply justify-between;
+        @apply justify-between p-[11px] scale-[0.8];
+        transition: all 0.5s ease-in-out;
+
+      }
+
+      .movie_text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 7;
+        overflow: hidden;
+        @apply  dir-l text-gray-300 px-4 pt-3 text-fs-label ;
       }
 
       .card_btn {
-        @apply absolute inset-0
+        @apply absolute inset-0 opacity-0 bg-[rgba(10,13,16,.6)];
+        backdrop-filter: blur(5px); 
+        transition: all 0.5s ease-in-out;
+
+      }
+
+      &:hover .card_btn {
+        @apply opacity-[1] rounded-radius-16;
+      }
+      &:hover .img_cover {
+        @apply scale-[1.1];
+      }
+
+      &:hover .play {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      &:hover .meta_list {
+        @apply scale-[1] text-red-600 font-bold;
+      }
+      &:hover .card_badge {
+        @apply text-red-500 font-bold; 
+      }
+
+      &:hover .title{
+        @apply text-red-400;
       }
     }
 
@@ -194,6 +247,21 @@ main {
   .slider_item {
     &::before {
       background-image: linear-gradient(283deg, hsl(220, 17%, 7%) 0%, hsla(220, 17%, 7%, 0) 100%) !important
+    }
+  }
+}
+
+@media (max-width: 463px) {
+  main {
+    .grid_list{
+      .movie_card {
+        .movie_text {
+          @apply px-8 pt-8 text-[20px];
+          -webkit-line-clamp: 13;
+          
+        }
+      }
+
     }
   }
 }
