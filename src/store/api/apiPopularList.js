@@ -80,7 +80,6 @@ $(document).on('alpine:init', function () {
                       poster_path,
                       vote_average,
                       id,
-                      language
       
                     } = item;
                     this.slider_item += `
@@ -101,7 +100,7 @@ $(document).on('alpine:init', function () {
                               </div>
           
                               <p class="genre">${genreList.asString(genre_ids)}</p>
-                              <P class="banner_text" data-lang="${language}" >${overview}</P>
+                              <P class="banner_text">${overview}</P>
                               
                               <a href="/detail" @click.prevent="changeRoute('/detail');
                                getMovieDetails(${id})" 

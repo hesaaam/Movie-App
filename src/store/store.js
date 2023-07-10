@@ -12,8 +12,7 @@ $(document).on('alpine:init', function () {
     return {
       toggleAciveClassSidebar: false,
       toggleAciveClass: false, // use in header.js
-      searchField: '',
-      searchResulMovie : [],
+      searchField: '', // x-model to input on searchBar.js
       imageBaseURL,
 
       /**
@@ -26,6 +25,10 @@ $(document).on('alpine:init', function () {
 
       },
 
+      /**
+       * store ulparam and genreName in `localStorage` for use in apimovieListPage.js
+       * 
+       */
       getMovieList (urlparam, genreName) {
         window.localStorage.setItem('urlParam', urlparam);
         window.localStorage.setItem('genreName', genreName);
@@ -33,10 +36,13 @@ $(document).on('alpine:init', function () {
 
 
       init() {
+        /**
+         * watch searchField and Any time change, run callback
+         */
         this.$watch('searchField', query => {
           if (!query.trim()) {
-            this.$refs.searchResult.classList.remove('active');
-            this.$refs.search_wrapper.classList.remove('searching');
+            this.$refs.searchResult.classList.remove('active'); // element in searchModal.js
+            this.$refs.search_wrapper.classList.remove('searching'); //  element in searchBar.js
             return;
           }
   
@@ -53,7 +59,7 @@ $(document).on('alpine:init', function () {
             this.$refs.searchResult.innerHTML = `
                 <p class="label">نتیحه برای</p>
 
-                <h1 class="heading" x-text="searchField"></h1>
+                <h1 class="heading" x-text="searchField.toLowerCase()"></h1>
 
                 <div class="movie_list">
 

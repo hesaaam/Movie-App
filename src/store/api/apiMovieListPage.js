@@ -5,7 +5,7 @@ import { wordToPersian } from '../../utils/translate';
 import { createMovieCard } from '../../components/movieCard';
 
 $(document).on('alpine:init', function () {
-  // genre-list //
+
   Alpine.data('movieList', function () {
     return {
       movieList: [],
