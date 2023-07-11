@@ -1,12 +1,12 @@
-# Movie App (SPA)
+# Movie App 
 
 - ⚡  Technologies : 
      - ✔  Vite
-     - ✔  AlpineJs
-     - ✔  jQuery
+     - ✔  Alpine.Js
      - ✔  TailwindCss
      - ✔  Vanilla
      - ✔  Git
+     - ✔  Sass
 
 - How to run :
   $ npm install
