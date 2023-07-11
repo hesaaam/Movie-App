@@ -50,7 +50,7 @@
       @apply border-t-[1px] border-solid border-banner-background pt-[28px] mt-[16px] min-[1200px]:px-[56px];
 
       .copyRight {
-        @apply text-on-surface-variant mb-[20px];
+        @apply text-on-surface-variant mb-[20px] hover:text-red-400 cursor-pointer ease-in duration-300;
 
         a {
           @apply inline-block

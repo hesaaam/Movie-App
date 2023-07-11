@@ -1,32 +1,32 @@
-import $ from 'jquery';
 import { wordToPersian } from '../../utils/translate';
 import { api_key, baseURL } from './api';
+import { fetchDataFromTmdb } from './api';
 
 
 
-$(document).on('alpine:init', function () {
+document.addEventListener('alpine:init', function () {
   // genre-list //
 
-    Alpine.data('genres', function()  {
+  Alpine.data('genres', function () {
     return {
       genresList: null,
       wordToPersian,
-  
-  
-  
+
+
+
       fetchGenreMovieList() {
-        $.get(`${baseURL}genre/movie/list?api_key=${api_key}`, (data, status) => {
-          if (status === 'success') {
-            this.genresList = data.genres
-  
-          }
+        fetchDataFromTmdb(`${baseURL}genre/movie/list?api_key=${api_key}`, ({genres}) => {
+
+          this.genresList = genres
+
+
         });
-  
+
       },
-  
+
       init() {
         this.fetchGenreMovieList()
-  
+
       }
 
     }

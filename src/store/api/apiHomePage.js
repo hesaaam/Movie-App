@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import { api_key, fetchDataFromTmdb, baseURL } from './api';
 import {movieList} from '../../components/movieList';
 
@@ -9,7 +8,7 @@ import {movieList} from '../../components/movieList';
 
 
 
-$(document).on('alpine:init', function () {
+document.addEventListener('alpine:init', function () {
 
   Alpine.data('homePage', function () {
     return {

@@ -1,11 +1,9 @@
-import $ from 'jquery'
-import { fetchData } from '../utils/usefulFunctions';
 import { api_key, baseURL,imageBaseURL, fetchDataFromTmdb } from './api/api';
 import { createMovieCard } from '../components/movieCard';
 
 
 
-$(document).on('alpine:init', function () {
+document.addEventListener('alpine:init', function () {
 
 
   Alpine.data('layout', function () {

@@ -1,10 +1,9 @@
-import $ from 'jquery';
 import { wordToPersian } from '../../utils/translate';
 import { addHeroSlideTo , fetchData } from '../../utils/usefulFunctions';
 import { api_key, imageBaseURL, baseURL } from './api';
 
 
-$(document).on('alpine:init', function () {
+document.addEventListener('alpine:init', function () {
 
   // Popular movie list //
 
@@ -40,7 +39,7 @@ $(document).on('alpine:init', function () {
   
   
         }
-        console.log(genreList);
+
         // ================================================================================//
   
         fetchData(`${baseURL}genre/movie/list?api_key=${api_key}`)
@@ -84,7 +83,7 @@ $(document).on('alpine:init', function () {
                     } = item;
                     this.slider_item += `
                           <div  class="slider_item ">
-                            <img src="${this.imageBaseURL}original${backdrop_path}"
+                            <img src="${this.imageBaseURL}w1280${backdrop_path}"
                               alt="${title}" class="img_cover" loading=${index === 0 ? "eager" : "lazy"}
                             />
           

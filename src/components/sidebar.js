@@ -48,8 +48,7 @@ const Sidebar = () => {
 
             <div class="sidebar_footer">
               <p class="copyRight">
-                copyright 2023 <a href="https://www.linkedin.com/
-                in/hesam-jalili-83867325b/">hesam-jalili</a>
+                copyright 2023 <a href="https://www.linkedin.com/in/hesam-jalili-83867325b/">hesam-jalili</a>
               </p>
 
               <img src="/dist/img/tmdb-logo.svg" width="130" height="17" alt="the movie database logo" />

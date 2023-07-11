@@ -1,11 +1,10 @@
-import $ from 'jquery'
 import { imageBaseURL, api_key, baseURL, fetchDataFromTmdb } from './api'
 import { wordToPersian } from '../../utils/translate.js'
 import { movieList as addsuggestion } from '../../components/movieList'
 
 
 
-$(document).on('alpine:init', function () {
+document.addEventListener('alpine:init', function () {
   Alpine.data('detail', () => ({
 
     getGenres(genreList) {

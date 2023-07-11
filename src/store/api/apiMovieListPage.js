@@ -1,10 +1,9 @@
-import $ from 'jquery';
 import { imageBaseURL, api_key, baseURL } from './api'
 import { fetchData } from '../../utils/usefulFunctions';
 import { wordToPersian } from '../../utils/translate';
 import { createMovieCard } from '../../components/movieCard';
 
-$(document).on('alpine:init', function () {
+document.addEventListener('alpine:init', function () {
 
   Alpine.data('movieList', function () {
     return {

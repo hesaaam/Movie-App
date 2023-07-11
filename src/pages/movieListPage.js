@@ -1,4 +1,4 @@
-import searchModal from "../components/searchModal"
+
 
 
 const movieListPage = () => {
@@ -31,19 +31,19 @@ const movieListPage = () => {
                         <div class="meta_list">
                           <div class="meta_item">
                             <img src="/dist/img/star.png" width="20" height="20" loading="lazy" alt="rating" />
-                            <span class="span" x-jsz>{{movie.vote_average.toFixed(1)}}</span>
+                            <span class="span" x-text="movie.vote_average.toFixed(1)"></span>
                           </div>
                         
-                          <div class="card_badge" x-jsz>{{movie.release_date.split('-')[0]}}</div>
+                          <div class="card_badge" x-text="movie.release_date.split('-')[0]"></div>
                         </div>
-                        <p class="movie_text" x-jsz>{{movie.overview}}</p>
+                        <p class="movie_text" x-text="movie.overview"></p>
                         <div class="play">
                           <img src="/dist/img/play.png" alt="ply"/>
                         </div>
                         <!-- getMovieDetails() called from store/store.js -->
                       </a>
                     </div>
-                    <h4 class="title" x-jsz>{{movie.title}}</h4>
+                    <h4 class="title" x-text="movie.title"></h4>
                   </div>
                 </template>
               

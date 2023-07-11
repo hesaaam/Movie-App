@@ -1,8 +1,7 @@
-// import Alpine from 'alpinejs'
-import $ from 'jquery'
 
 
-$(document).on('alpine:init', function () {
+
+document.addEventListener('alpine:init', function () {
   Alpine.data('route', function () {
     return {
       route: window.location.href,

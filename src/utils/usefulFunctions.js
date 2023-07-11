@@ -1,4 +1,4 @@
-import $ from 'jquery';
+
 
 
 export const addEventOnElement = (element, eventType, callback) => {
