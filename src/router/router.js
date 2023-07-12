@@ -4,20 +4,15 @@
 document.addEventListener('alpine:init', function () {
   Alpine.data('route', function () {
     return {
-      route: window.location.href,
-      path: window.location.pathname,
-
-      changeRoute(route) {
-        this.route = route;
-        window.location.href = this.route;
+      route: window.location.hash.replace('#', '') || '/home',
+      changeRoute (path) {
+        this.route = path;
+        window.location.hash = path
+        location.reload();
       },
 
       init() {
-        window.addEventListener('hashchange', () => {
-          this.route = window.location.href
-          this.path = window.location.pathname
-        });
-
+       this.route = window.location.hash ? window.location.hash.replace('#', '') : '/home'
       }
 
     }

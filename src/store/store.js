@@ -20,7 +20,7 @@ document.addEventListener('alpine:init', function () {
       getMovieDetails(movieId) {
         window.localStorage.setItem('movieId', String(movieId));
         // location.reload();
-
+          
       },
 
       /**

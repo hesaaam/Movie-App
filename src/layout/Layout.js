@@ -24,15 +24,15 @@ const Layout = () => {
         
           ${Sidebar()}
 
-          <template x-if="path === '/home' || path === '/'" >
+          <template x-if="route === '/home' || route === '/'" >
             ${Home()}
           
           </template>
 
-          <template x-if="path === '/detail'" >
+          <template x-if="route === '/detail'" >
             ${Detail()}
           </template>
-          <template x-if="path === '/movie-list'" >
+          <template x-if="route === '/movie-list'" >
             ${movieListPage()}
           </template>
           ${searchModal()}

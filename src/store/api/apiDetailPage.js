@@ -45,7 +45,7 @@ document.addEventListener('alpine:init', function () {
     },
 
     getAgeCategory (certification) {
-      const AgeCategory = certification.find( obj =>  obj.iso_3166_1 === 'US')
+      const AgeCategory = certification.find( ({iso_3166_1}) =>  iso_3166_1 === 'US')
       return AgeCategory ? AgeCategory['certification'] || 'PG' : 'PG';
        
     },
