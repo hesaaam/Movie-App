@@ -69,7 +69,7 @@ document.addEventListener('alpine:init', function () {
           } = movie;
          
    
-          document.title = `${title} - Hmovie`;
+          document.title = `${title} - Hfilm`;
 
           const movieDetail = document.createElement('div');
           movieDetail.classList.add('movie_detail');

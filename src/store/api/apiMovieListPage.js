@@ -28,7 +28,7 @@ document.addEventListener('alpine:init', function () {
             this.movieList = movieList
             this.totalPage = total_page
 
-            document.title = `${this.genreName} Movie - Hmovie`;
+            document.title = `${this.genreName} Movie - Hfilm`;
           })
           .catch((err) => {
             console.error('Error:', err);
