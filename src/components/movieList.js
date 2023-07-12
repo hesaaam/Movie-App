@@ -35,11 +35,13 @@ export const movieList = function ({results : movieResults}, title) {
   
   switch (path) {
     case '#/home':
-      return pageContent.appendChild(movieListElem)
+      return pageContent.appendChild(movieListElem);
     case '#/':
-      return pageContent.appendChild(movieListElem)
+      return pageContent.appendChild(movieListElem);
+    case '':
+      return pageContent.appendChild(movieListElem);
     case '#/detail':
-      return pageDetail.appendChild(movieListElem);
+      return pageDetail.appendChild(movieListElem)
     default:
       break;
   }
