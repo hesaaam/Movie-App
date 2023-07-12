@@ -104,7 +104,7 @@ document.addEventListener('alpine:init', function () {
                               <a href="/detail" @click.prevent="changeRoute('/detail');
                                getMovieDetails(${id})" 
                                class="btn">
-                                <span>حالا تماشا کن</span>
+                                <span>تماشا کن</span>
                                 <img src="/dist/img/play_circle.png" width="24" height="24" aria-hidden="true" alt="play circle" />
           
                               </a>
