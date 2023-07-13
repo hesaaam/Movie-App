@@ -13,6 +13,11 @@ document.addEventListener('alpine:init', function () {
 
       init() {
        this.route = window.location.hash ? window.location.hash.replace('#', '') : '/home'
+
+       window.addEventListener("hashchange", function(event) {
+        console.log(event);
+        location.reload();
+      });
       }
 
     }
